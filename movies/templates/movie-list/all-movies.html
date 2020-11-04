@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+<div class="container">
+  <h1 class="text-center">Popular movies</h1><br>
+
+  <div class="row">
+    {% for movie in popular_movies %}
+    <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
+      <img src="https://image.tmdb.org/t/p/w500{{ movie.poster }}" alt="{{ movie.title }} poster" class="img-fluid">
+      <li class="text-center">
+        <a href="{% url 'single_movie' movie.movie_id %}">
+              {{ movie.movie_title }}</a>
+      </li>
+  </div>
+  {% endfor %}
+  </div>
+  <h1 class="text-center">Now Showing</h1><br>
+
+  <div class="row">
+    {% for movie in now_showing_movies %}
+    <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
+      <img src="https://image.tmdb.org/t/p/w500{{ movie.poster }}" alt="{{ movie.title }} poster" class="img-fluid">
+      <li class="text-center">
+        <a href="{% url 'single_movie' movie.movie_id %}">
+              {{ movie.movie_title }}</a>
+      </li>
+  </div>
+  {% endfor %}
+  </div>
+
+  <h1 class="text-center">Upcoming Movies</h1><br>
+
+  <div class="row">
+    {% for movie in upcoming_movies %}
+    <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
+      <img src="https://image.tmdb.org/t/p/w500{{ movie.poster }}" alt="{{ movie.title }} poster" class="img-fluid">
+      <li class="text-center">
+        <a href="{% url 'single_movie' movie.movie_id %}">
+              {{ movie.movie_title }}</a>
+      </li>
+  </div>
+  {% endfor %}
+  </div>
+  
+</div>
+{% endblock %}

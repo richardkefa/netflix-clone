@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+<div class="container">
+<div class="row">
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 posterPath">
+    <img src="https://image.tmdb.org/t/p/w500{{ movie.poster }}" alt="{{movie.movie_title}}">
+  </div>
+
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 movie-details" id="movie_details">
+    
+      <h3 style="color: red;">{{ movie.movie_title }}</h3>
+      <h5>Overview</h5>
+
+      <p class="overview"> {{ movie.overview }}</p>
+      <iframe id="player" type="text/html" width="640" height="390"
+  src="http://www.youtube.com/embed/{{movie.movie_title}}?enablejsapi=1&origin=http://www.foxmovies.com/movies/{{movie.movie_title}}"
+  frameborder="0"></iframe>
+      
+
+  </div>
+</div>
+</div>
+{% endblock %}

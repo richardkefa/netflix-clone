@@ -1,0 +1,28 @@
+h1 {
+  color: red;
+}
+body{
+  background-color: black;
+  font-family: 'Nunito', sans-serif;
+}
+
+li {
+  list-style: none;
+  color: white;
+}
+li>a{
+color: white;
+
+}
+li>a:hover{
+  color: red;
+  text-decoration: none;
+}
+
+#movie_details{
+  color: white;
+}
+
+#lable{
+  font-family: 'Merriweather Sans', sans-serif;
+}
